@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<div class="container">
+    <div class="details">
+        <h1>Cars</h1>
+        <br>
+        <input type="text" placeholder="model" #model (input)="refresh(model.value)"/>
+        <p id="info">Last search: "{{model.value}}"</p>
+    </div>
+    <table class="w3-table-all" style="margin-top: 30px; align-self: center; width: 80%;">
+        <tr>
+            <th> Model</th>
+            <th> HP</th>
+            <th> Fuel</th>
+            <th> Price</th>
+            <th> Color</th>
+            <th> Year</th>
+            <th> Body Style</th>
+            <th>
+                <button class="add" (click)="navigateToAdd()">add</button>
+            </th>
+        </tr>
+        <tr *ngFor="let car of cars">
+            <td>{{car.model}}</td>
+            <td>{{car.horsePower}}</td>
+            <td>{{car.fuel}}</td>
+            <td>{{car.price}}</td>
+            <td>{{car.color}}</td>
+            <td>{{car.manufacturingYear}}</td>
+            <td>{{car.bodyStyle}}</td>
+            <td>
+                <button id="updateButton" (click)="navigateToUpdate(car.carID)">Update</button>
+                <br>
+                <button id="deleteButton" (click)="doDelete(car.carID)">Delete</button>
+                <br>
+            </td>
+        </tr>
+    </table>
+</div>
+
+

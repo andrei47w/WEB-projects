@@ -1,0 +1,42 @@
+<!--Write a web application for managing a second-hand car business. The application should maintain various information-->
+<!--about a car in the database (i.e. model, engine power, fuel, price, color, age, history etc.). The application should-->
+<!--implement: car browsing (use AJAX for retrieving cars from a specific category), adding, removing and updating a car.-->
+<!--Also, on the browsing page, the filter used for the previous browsing action (i.e. category), should be displayed-->
+<!--(do this in javascript).-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Second-Hand Car Business</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="showCar.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <div class="details">
+        <h1>Cars</h1>
+        <br>
+        <input type="text" placeholder="model" id="model"/>
+        <p id="info"></p>
+    </div>
+    <table style="margin-top: 30px; align-self: center; width: 80%;">
+        <tr>
+            <th> Model</th>
+            <th> HP</th>
+            <th> Fuel</th>
+            <th> Price</th>
+            <th> Color</th>
+            <th> Year</th>
+            <th> Body Style</th>
+            <th>
+                <button class="add" onclick="window.location.href='addCar.html'">add</button>
+            </th>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

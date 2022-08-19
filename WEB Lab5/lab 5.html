@@ -1,0 +1,43 @@
+<!--Solve the following task using only the jQuery library (production version, jquery.min.js, or developement version,-->
+<!--jquery.js); YOU ARE NOT ALLOWED TO USE ANY OTHER JS LIBRARY, PLUGIN OR EXTENSION BESIDES THE JQUERY LIBRARY. Write a-->
+<!--web page which contains a form with at least 5 input fields and a button. If the user clicks on that button a modal -->
+<!--interface window (actually a div) should pop out in the center of the browser window. This modal window should contain -->
+<!--4 input fields and a button. If the user clicks on that button, the modal window disappears and all the values inserted -->
+<!--by the user in the modal window's input fields will be concatenated and added to a text field in the main form. During-->
+<!--the time the modal window is displayed, the fields from the main form will be inactive and a transparrent gray div-->
+<!--should be displayed on top of the web page (this grey div should be beneath the modal window and should occupy the whole-->
+<!--browser window).-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 5</title>
+    <link type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<main>
+    <form id="form">
+        <input type="button" id="openBtn" value="Open"><br>
+        <input id="output" type="text" value=""><br>
+        <input type="text" value=""><br>
+        <input type="text" value=""><br>
+        <input type="text" value=""><br>
+        <input type="text" value="">
+    </form>
+
+    <div id="overlay" style="display:none"></div>
+
+    <div id="window" style="display:none">
+        <input id="input1" type="text" value=""><br>
+        <input id="input2" type="text" value=""><br>
+        <input id="input3" type="text" value=""><br>
+        <input id="input4" type="text" value="">
+    </div>
+</main>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

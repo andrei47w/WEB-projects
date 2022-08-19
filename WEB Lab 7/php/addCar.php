@@ -1,0 +1,62 @@
+<?php
+require_once "extra/config.php";
+if (isset($_POST['model'])) {
+//if (isset($_POST['model']) && !empty(trim($_POST['model']))) {
+    $model = $_POST['model'];
+    $hp = $_POST['horsePower'];
+    $fuel = $_POST['fuel'];
+    $price = $_POST['price'];
+    $color = $_POST['color'];
+    $year = $_POST['manufacturingYear'];
+    $style = $_POST['bodyStyle'];
+    $sql_query = "INSERT INTO car(model, horsePower, fuel, price, color, manufacturingYear, bodyStyle) VALUES ('$model', '$hp', '$fuel', $price, '$color', '$year', '$style')";
+
+//  statement sanitizing
+    $model = filter_var($model, FILTER_SANITIZE_STRING);
+    $hp = filter_var($hp, FILTER_SANITIZE_NUMBER_INT);
+    $fuel = filter_var($fuel, FILTER_SANITIZE_STRING);
+    $price = filter_var($price, FILTER_SANITIZE_NUMBER_INT);
+    $color = filter_var($color, FILTER_SANITIZE_STRING);
+    $year = filter_var($year, FILTER_SANITIZE_NUMBER_INT);
+    $style = filter_var($style, FILTER_SANITIZE_STRING);
+
+// validating email
+    if (!filter_var($hp, FILTER_VALIDATE_INT) === false &&
+        !filter_var($price, FILTER_VALIDATE_INT) === false &&
+        !filter_var($year, FILTER_VALIDATE_INT) === false) {
+
+        global $connection;
+        $result = mysqli_query($connection, $sql_query);
+        mysqli_close($connection);
+    }
+} else {
+    $postdata = file_get_contents("php://input");
+    $request = json_decode($postdata);
+    $model = $request->model;
+    $hp = $request->horsePower;
+    $fuel = $request->fuel;
+    $price = $request->price;
+    $color = $request->color;
+    $year = $request->manufacturingYear;
+    $style = $request->bodyStyle;
+
+    //  statement sanitizing
+    $model = filter_var($model, FILTER_SANITIZE_STRING);
+    $hp = filter_var($hp, FILTER_SANITIZE_NUMBER_INT);
+    $fuel = filter_var($fuel, FILTER_SANITIZE_STRING);
+    $price = filter_var($price, FILTER_SANITIZE_NUMBER_INT);
+    $color = filter_var($color, FILTER_SANITIZE_STRING);
+    $year = filter_var($year, FILTER_SANITIZE_NUMBER_INT);
+    $style = filter_var($style, FILTER_SANITIZE_STRING);
+
+// validating email
+    if (!filter_var($hp, FILTER_VALIDATE_INT) === false &&
+        !filter_var($price, FILTER_VALIDATE_INT) === false &&
+        !filter_var($year, FILTER_VALIDATE_INT) === false) {
+
+        $sql_query = "INSERT INTO car(model, horsePower, fuel, price, color, manufacturingYear, bodyStyle) VALUES ('$model', '$hp', '$fuel', $price, '$color', '$year', '$style')";
+        global $connection;
+        $result = mysqli_query($connection, $sql_query);
+        mysqli_close($connection);
+    }
+}

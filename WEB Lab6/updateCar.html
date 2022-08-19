@@ -1,0 +1,27 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Update Car</title>
+</head>
+
+<body>
+<div class="wrapper">
+    <h1>Update Car</h1>
+    <form action="updateCar.php" method="post">
+        <input type="hidden" name="id" value="<?php echo trim($_GET['id']); ?>">
+        <input type="text" name="model" placeholder="Model"> <br>
+        <input type="number" name="horsePower" placeholder="HP"> <br>
+        <input type="text" name="fuel" placeholder="Fuel"> <br>
+        <input type="number" name="price" placeholder="Price"> <br>
+        <input type="text" name="color" placeholder="Color"> <br>
+        <input type="number" name="manufacturingYear" placeholder="Manufacturing Year"> <br>
+        <input type="text" name="bodyStyle" placeholder="Body Style"> <br>
+       <div class="button_container">
+            <button type="submit">Update Car</button>
+        </div>
+    </form>
+</div>
+</body>
+
+</html>

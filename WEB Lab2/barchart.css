@@ -1,0 +1,84 @@
+.barchart-Wrapper {
+  display: table;
+  position: relative;
+  margin: 20px 0;
+  height: 252px;
+}
+
+.barChart-Container {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  padding-left: 15px;
+}
+
+.barchart {
+  display: table;
+  table-layout: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.barchart-Col {
+  position: relative;
+  vertical-align: bottom;
+  display: table-cell;
+  height: 100%;
+}
+
+.barchart-Bar {
+  width: 66px;
+  margin: auto;
+}
+
+.barchart-BarFooter {
+  position: absolute;
+  text-align: center;
+  height: 10%;
+  width: 100%;
+}
+
+.barchart-BarFooter h3 {
+  color: black;
+}
+
+.barchart-TimeCol {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.barchart-Time {
+  height: 20%;
+  vertical-align: middle;
+  position: relative;
+}
+
+.barchart-TimeText {
+  position: relative;
+  background: white;
+  padding-right: 5px;
+  color: black;
+  font-size: 15px;
+}
+
+.first-bar {
+  background-color: red;
+}
+
+.second-bar {
+  background-color: orange;
+}
+
+.third-bar {
+  background-color: yellow;
+}
+
+.forth-bar {
+  background-color: greenyellow;
+}
+
+.fifth-bar {
+  background-color: green;
+}

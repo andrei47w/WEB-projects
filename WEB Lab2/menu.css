@@ -1,0 +1,50 @@
+main {
+    min-height: calc(100vh - 5rem);
+}
+
+.dropbtn {
+    background-color: yellowgreen;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    min-width: 100px;
+}
+
+.dropup {
+    position: center;
+    /*min-width: 60px;*/
+    display: table-cell;
+}
+
+.dropup-content {
+    display: none;
+    position: absolute;
+    bottom: 70px;
+    background-color: white;
+    /*min-width: 160px;*/
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.7);
+}
+
+.dropup-content a {
+    color: black;
+    position: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    min-width: auto;
+    /*display: table-caption;*/
+    display: block;
+}
+
+.dropup-content a:hover {
+    background-color: darkgrey;
+}
+
+.dropup:hover .dropup-content {
+    display: block;
+
+}
+
+.dropup:hover .dropbtn {
+    background-color: forestgreen;
+}
